@@ -1,0 +1,165 @@
+/* CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  color: white;
+}
+
+/* Backgrount Image and Overlay */
+
+html {
+  background: url(./assets/city.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.overlay {
+  content:" ";
+  top:0;
+  left:0;
+  z-index:2;
+  background: rgba(0,0,0,0.5);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.centered {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Error message formatting */
+
+.error {
+  color: white;
+  font-size: 0.8em;
+}
+
+.highlight {
+  background: rgba(0,0,0,.5);
+}
+
+/* Input Formatting from https://codepen.io/rikschennink/pen/VaqNgx */
+
+span,input {
+	border:2px solid rgba(255,255,255,.8);
+	font-size:1.25em;
+	padding:.25em .5em .3125em;
+	color:rgba(255,255,255,1);
+	border-radius:.25em;
+	background:transparent;
+	transition:all .100s;
+
+  &:focus{
+    outline:none;
+    color:rgb(255,255,255);
+    border-color:rgb(255,255,255);
+  }
+
+  &.keyup {
+    color:white;
+    border-color:white;
+    text-shadow:0 0 .125em white;
+    box-shadow:0 0 .25em white,inset 0 0 .25em white;
+  }
+}
+canvas {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	pointer-events:none;
+}
+
+input, body {
+	font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+  font-size: 1.15em;
+}
+
+$placeholder-color:rgb(255,255,255);
+
+::-webkit-input-placeholder {
+    color:white;
+    opacity: 0.8;
+    text-align: center;
+}
+
+::-moz-placeholder {
+    color:white;
+    opacity: 0.8;
+    text-align: center;
+}
+
+::-ms-placeholder {
+    color:white;
+    opacity: 0.8;
+    text-align: center;
+}
+
+::placeholder {
+    color:white;
+    opacity: 0.8;
+    text-align: center;
+}
+
+html,body {
+	height:100%;
+	overflow:hidden;
+}
+
+body {
+  line-height: 1.5;
+}
+
+/* Responsive Media Queries */
+
+/* Galaxy S5 */
+@media only screen
+  and (device-width : 320px)
+  and (device-height : 568px)
+  and (-webkit-device-pixel-ratio : 3) {
+  input, body{
+    font-size:0.9em;
+  }
+}
+
+
+/* iphone 6/7/8/8 Plus/X, Pixel 2/XL */
+@media only screen
+  and (max-device-width : 767px)
+  and (min-device-width : 321px) 
+  and (orientation : landscape) {
+    input, body{
+      font-size:0.9em;
+    }
+}
+
+
+
+/* ipad/ipad Pro */
+@media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1024px) {
+    input, body{
+      font-size:1.50em;
+    }
+}
